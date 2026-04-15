@@ -148,20 +148,24 @@ The application uses a real-time CNN-LSTM approach for dynamic gesture recogniti
 
 ## 🎨 Tech Stack
 
-### Backend
-- **Node.js + Express** — REST API server
-- **Multer** — File upload handling
-- **Helmet** — Security headers
-- **CORS** — Cross-origin requests
-- **Morgan** — Request logging
-- **express-rate-limit** — Rate limiting
+### Python ML Service
+- **FastAPI** — High-performance model endpoint
+- **TensorFlow** — CNN-LSTM model inference
+- **MediaPipe** — Holistic keypoint extraction
+- **OpenCV** — Visual frame processing
 
-### Frontend
-- **React 18** — UI framework
-- **Recharts** — Analytics charts
-- **react-hot-toast** — Notifications
-- **Lucide React** — Icons
-- **CSS Variables** — Design system
+### Node Gateway
+- **Node.js + Express** — Gateway API & routing
+- **Multer** — File upload parsing
+- **Helmet & CORS** — Security & cross-origin policies
+- **express-rate-limit** — API traffic limits
+
+### Frontend Client
+- **React 18** — Interface architecture
+- **Web SpeechSynthesis API** — Text-to-speech output
+- **MyMemory API** — Real-time NLP translation
+- **Recharts** — Analytics data tracking
+- **CSS Variables** — Custom tokenized design system
 
 ---
 
@@ -178,14 +182,14 @@ The application uses a real-time CNN-LSTM approach for dynamic gesture recogniti
 
 ## 📸 Features
 
-- **Live Webcam Recognition** — Real-time CNN-LSTM inference via webcam
-- **Snapshot Mode** — Capture single frames for analysis
-- **Live Mode** — Continuous automatic recognition (~0.8fps)
-- **File Upload** — Analyze images or video files
-- **Gesture Dictionary** — Browse all 4 supported gestures
-- **History Log** — Full log of all recognition events
-- **Analytics Dashboard** — Recharts-powered visualizations
-- **API Health Monitoring** — Live backend status indicator
+- **Discrete Sequence Capture** — Precisely captures exactly 30 frames for maximum CNN-LSTM inference accuracy
+- **Real-time Voice Output (TTS)** — Spoken audio pronunciation for recognized gestures
+- **Multilingual Support** — Translates recognized gestures into multiple regional languages instantly
+- **Keypoint Overlay Rendering** — Renders the skeletal structure identifying precisely what the model saw
+- **Gesture Learning Hub** — Browse and learn supported gestures in the dictionary
+- **File Upload Engine** — Batch analyze static images or offline video files
+- **Analytics & History Dashboard** — Detailed visual timeline and telemetry charts
+- **Cluster Diagnostics** — Live API health monitoring spanning Node + Python backend nodes
 
 ---
 
