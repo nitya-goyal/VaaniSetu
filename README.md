@@ -29,6 +29,10 @@ This platform supports multimodal input and targets several core functionalities
 
 ```
 slr-project/
+├── python_backend/   # Python FastAPI + CNN-LSTM Model
+│   ├── app.py        ← FastAPI server & /predict endpoint
+│   ├── my_model.keras← Trained CNN-LSTM model weights
+│   └── requirements.txt
 ├── backend/          # Node.js + Express REST API
 │   ├── src/
 │   │   └── server.js
@@ -43,7 +47,7 @@ slr-project/
     │   │   ├── Dashboard.jsx
     │   │   ├── Recognize.jsx   ← Live webcam recognition
     │   │   ├── Upload.jsx      ← File upload recognition
-    │   │   ├── Gestures.jsx    ← Gesture dictionary
+    │   │   ├── Gestures.jsx    ← Gesture dictionary / Learning Hub
     │   │   ├── History.jsx     ← Recognition log
     │   │   └── Analytics.jsx   ← Charts & insights
     │   ├── api.js
@@ -59,9 +63,23 @@ slr-project/
 
 ### Prerequisites
 - Node.js 18+ and npm
+- Python 3.9+ with pip
 - A modern browser with webcam access
 
-### 1. Backend Setup
+> **Start all three servers** in separate terminals. The recommended startup order is: Python Backend → Node Backend → Frontend.
+
+### 1. Python Backend Setup (CNN-LSTM Model)
+
+```bash
+cd python_backend
+pip install -r requirements.txt
+python -m uvicorn app:app --reload --port 8000
+```
+
+Python backend runs at **http://localhost:8000**  
+Key endpoint: `POST /predict` — accepts a base64 JPEG frame, returns `{ gesture, confidence }`
+
+### 2. Node.js Backend Setup
 
 ```bash
 cd backend
@@ -72,9 +90,9 @@ npm run dev          # development (with nodemon)
 npm start            # production
 ```
 
-Backend runs at **http://localhost:5000**
+Node backend runs at **http://localhost:5000**
 
-### 2. Frontend Setup
+### 3. Frontend Setup
 
 ```bash
 cd frontend
