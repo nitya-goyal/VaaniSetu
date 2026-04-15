@@ -4,6 +4,8 @@
 
 The system leverages computer vision, deep learning (CNN-LSTM), and natural language processing (NLP) to accurately interpret gestures and speech, converting them into meaningful, accessible multiformat outputs.
 
+https://github.com/user-attachments/assets/18b95228-feab-417c-9967-25d780e93dbe
+
 ## 🎯 Project Overview & Core Functionalities
 
 This platform supports multimodal input and targets several core functionalities to bridge the communication gap:
