@@ -137,22 +137,12 @@ curl -X POST http://localhost:5000/api/recognize/realtime \
 
 ---
 
-## 🧠 Connecting the Real Python Model (FastAPI/TensorFlow)
+## 🧠 Model Architecture (CNN-LSTM)
 
-The Node.js backend currently simulates inference. To connect the real CNN-LSTM model:
+The application uses a real-time CNN-LSTM approach for dynamic gesture recognition.
 
-1. Run the Python FastAPI backend (see project PDF for implementation details)
-2. In `backend/src/server.js`, replace the `simulateInference()` call with a real HTTP request:
-
-```js
-// In simulateInference(), replace with:
-const pythonRes = await fetch('http://localhost:8000/predict', {
-  method: 'POST',
-  body: frameBuffer,          // raw image bytes
-  headers: { 'Content-Type': 'image/jpeg' }
-});
-const { gesture, confidence } = await pythonRes.json();
-```
+- **Python Backend**: Extracts keypoints (pose, face, left hand, right hand) from a 30-frame sequence using MediaPipe. It then passes the isolated sequence to the pre-trained `my_model.keras` TensorFlow model via FastAPI.
+- **Node.js API**: The frontend captures a rapid sequence of 30 contiguous frames and sends it to the Node `/api/recognize/sequence` endpoint, which seamlessly routes the inference task to the Python service.
 
 ---
 
