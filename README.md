@@ -189,11 +189,9 @@ The application uses a real-time CNN-LSTM approach for dynamic gesture recogniti
 
 ---
 
-## 🔮 Future Enhancements (from project PDF)
+## 🔮 Future Enhancements
 
-- Sentence-level recognition with NLP integration
-- Multilingual sign language support (BSL, ISL, etc.)
+- Sentence-level recognition with advanced NLP integration
+- Expanded multilingual sign language support (BSL, ASL, etc.)
 - Cloud deployment (AWS / GCP)
 - Mobile app via React Native
-- Real TensorFlow model integration
-- Text-to-speech output
